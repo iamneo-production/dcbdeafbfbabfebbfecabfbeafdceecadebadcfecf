@@ -1,0 +1,83 @@
+
+<html>
+  <body>
+<form action="" [formGroup]="form">
+<table>
+  <tr>
+    <td>
+  <label>First Name:  </label>
+</td>
+  <td>
+  <input type="text" id="first_name" formControlName="first_name"><br/>
+  </td>
+  <td>
+  <span id="errorFirstName" *ngIf="form.get('first_name')?.invalid">enter valid name</span>
+  </td>
+  </tr>
+  <tr>
+    <td>
+      <label>Gender</label>
+      </td>
+      <td>
+        <input type="radio" id="gender" name="gender" value="male" formControlName="gender">
+        <label for="gender1">male</label>
+        <input type="radio" id="gender" name="gender" value="female" formControlName="gender">
+        <label for="gender2">female</label>
+    </td>
+      <td>
+        <span id="errorGender" *ngIf="form.get('gender')?.invalid">selsect gender</span>
+      </td>
+
+  </tr>
+  <tr>
+    <td>
+      <label>Country:</label>
+      </td>
+      <td>
+    <select formControlName="country">
+      <option value="">Select Country</option>
+      <option value="US">US</option>
+      <option value="Canada">Canada</option>
+      <option value="India">India</option>
+    </select>
+    </td>
+    <td>
+       <span id="errorCountry"  *ngIf="form.get('country')?.invalid">select country</span>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <label>City:</label>
+    </td>
+    <td>
+    <select formControlName="city">
+      <option value="">Select City</option>
+      <option value="New York">New York</option>
+      <option value="Toronto">Toronto</option>
+      <option value="Delhi">Delhi</option>
+    </select>
+    </td>
+    <td>
+      <span id="errorCity" *ngIf="form.get('city')?.invalid">select city</span>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <label>
+      Age
+    </label>
+    </td>
+    <td>
+    <input type="text" id="age" formControlName="age">
+    </td>
+    <td><span id="errorAge" *ngIf="form.get('age')?.invalid">enter age</span></td>
+  </tr>
+  <tr>
+    <td>
+    <button type="submit">Submit</button>
+    </td>
+  </tr>
+</table>
+</form>
+</body>
+</html>
